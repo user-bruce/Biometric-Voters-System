@@ -39,7 +39,8 @@
 
 .home-tab-inner-row {
   padding: 20px 35px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-content: flex-start;
 }
