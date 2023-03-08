@@ -40,6 +40,7 @@
 .home-tab-inner-row {
   padding: 20px 35px;
   display: grid;
+  background-color: rgb(236, 237, 243);
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-content: flex-start;
@@ -63,7 +64,7 @@
 
 .positions-inner > .positions-title{
   font-size: 18px;
-  margin-bottom: 22px;
+  margin-bottom: 12px;
   font-weight: 500;
 }
 
@@ -116,6 +117,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   gap: 50px;
+  padding: 10px 0px;
   max-height: 500px;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -136,5 +138,5 @@
 
 .select-contestant-title {
   text-align: center;
-  margin: 5px 0px 30px 0px;
+  margin: 5px 0px 8px 0px;
 }

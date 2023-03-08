@@ -10,8 +10,8 @@ import { Contestant } from 'src/app/shared/models/contestant';
 export class VotingPageComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<VotingPageComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Contestant,) {
-
+    @Inject(MAT_DIALOG_DATA) public data: any,) {
+      console.log(data)
    }
 
    onNoClick(): void{

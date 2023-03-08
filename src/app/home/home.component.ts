@@ -1,3 +1,5 @@
+import { Contestant } from 'src/app/shared/models/contestant';
+import { VotingService } from './../shared/services/voting.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { VotingPageComponent } from './voting-page/voting-page.component';
@@ -9,28 +11,37 @@ import { VotingPageComponent } from './voting-page/voting-page.component';
 })
 export class HomeComponent implements OnInit {
 
-  //Name
-  name: string | undefined;
-  position: string | undefined;
+  //Data
+  contestants: any;
+  titles: any;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, public votingService: VotingService) { }
 
-  //Open the dialog
-  openDialog(): void{
+  openDialog(contestant: any): void{
     const dialogRef = this.dialog.open(VotingPageComponent,{
-      data: {
-        name : this.name,
-        position: this.position,
-      }
+      data: contestant
     });
     dialogRef.afterClosed().subscribe(result =>{
-      console.log(result);
     })
   }
 
   ngOnInit(): void {
-    this.name="Mr Bruce Chimoyo";
-    this.position = "Mayor";
+    this.votingService.getAllContestants().subscribe({
+      next: value =>{
+        this.contestants = value;
+      },
+      error: err =>{
+        console.log(err);
+      }
+    });
+    this.votingService.getAllContestantRoles().subscribe({
+      next: value =>{
+        this.titles = value;
+      },
+      error: err =>{
+        console.log(err)
+      }
+    })
   }
 
 }

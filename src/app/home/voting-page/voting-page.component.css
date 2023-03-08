@@ -34,9 +34,7 @@
 }
 
 .contestant-role{
-  display: grid;
-  grid-template-columns: 1fr 8fr;
-  gap: 5px;
+  
 }
 
 .voting-page-instruction{

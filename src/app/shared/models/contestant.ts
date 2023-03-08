@@ -1,4 +1,8 @@
 export interface Contestant{
-  name: string;
-  position: string;
+  id: string;
+  firstName: string;
+  surname: string;
+  email: string;
+  title: string;
+  voteCount: number;
 }

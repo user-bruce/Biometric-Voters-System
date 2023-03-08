@@ -2,12 +2,11 @@
 <div class="voting-page-row">
   <h2 class="voting-page-title">Cast your vote</h2>
   <div class="voting-page-content">
-    <img class="voting-page-image" src="../../../assets/images/businessman.png" alt="voting-image">
+    <img class="voting-page-image" src="../../../assets/images/box.jpg" alt="voting-image">
     <div class="contestant-details">
-      <p class="contestant-name">Name : {{data.name}}</p>
+      <p class="contestant-name">{{data.firstName+" "+data.surname}}</p>
       <div class="contestant-role">
-        <mat-icon>stars</mat-icon>
-        <p class="contestant-role-name">Contesting for : {{data.position}}</p>
+        <p class="contestant-role-name">(For {{data.title.titleName+")"}}</p>
       </div>
     </div>
     <div class="voting-page-instructions">
