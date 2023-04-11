@@ -75,7 +75,6 @@ export class SignupComponent implements OnInit {
   submitVoter(body: any) {
     this.votingService.registerVoter(body).subscribe({
       next: value => {
-        console.log(value)
         Notiflix.Notify.success(
           'Submitted voter to DB',
           {

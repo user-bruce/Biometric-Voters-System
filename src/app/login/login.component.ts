@@ -87,11 +87,9 @@ export class LoginComponent implements OnInit {
   getVoterDetails(id: number): void {
     this.votingService.getVoterDetails(id).subscribe({
       next: value => {
-        console.log(value)
         const key = new LocalKey("loggedVoterDetails", "");
         LocalStorage.setItem(key, value)
         this.voter = value;
-        console.log(LocalStorage.getItem(key))
       },
       error: err => {
         console.log(err.message)

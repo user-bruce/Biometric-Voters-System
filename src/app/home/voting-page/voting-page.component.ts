@@ -26,7 +26,6 @@ export class VotingPageComponent implements OnInit {
     this.wsSubscription = this.wsService.createObservableSocket("ws://192.168.43.134/ws").subscribe({
       next: data => {
         if (JSON.parse(data)['status'] === "sensor_ready") {
-          console.log(JSON.parse(data)['id']);
         } else if (JSON.parse(data)['status'] === "vote_ready") {
           Notiflix.Notify.success(
             `${JSON.parse(data)['message']}`,
@@ -90,7 +89,6 @@ export class VotingPageComponent implements OnInit {
   }
 
   submitVote(): void {
-    console.log(this.data)
     const key = new LocalKey("loggedVoter", '')
     let body = {
       contestant: this.data,
