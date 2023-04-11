@@ -80,6 +80,11 @@
   justify-content: center;
 }
 
+.mat-card-inner-row h3{
+  font-size: 32px;
+  font-weight: bold;
+}
+
 .mat-card-inner-row>h2 {
   text-align: center;
 }
@@ -139,4 +144,20 @@
 .select-contestant-title {
   text-align: center;
   margin: 5px 0px 8px 0px;
+}
+
+.no-contestants-container{
+  padding: 12px 8px;
+}
+
+.search-contestant-container{
+  width: 100%;
+}
+
+.search-contestant-input{
+  width: 100%;
+  margin: 0px 15px;
+  text-align: center;
+  padding: 5px 0px;
+  margin-bottom: 15px;
 }

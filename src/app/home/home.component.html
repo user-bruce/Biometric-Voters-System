@@ -15,8 +15,8 @@
                     <div class="mat-card-inner">
                       <div class="mat-card-inner-row">
                         <img class="app-image" alt="" src="../../assets/images/trophy.png">
-                        <h2>Total Contestants</h2>
-                        <h3>0</h3>
+                        <!-- <h2>Total Contestants</h2>
+                        <h3>{{totalContestants}}</h3> -->
                       </div>
                     </div>
                   </mat-card-content>
@@ -26,8 +26,8 @@
                     <div class="mat-card-inner">
                       <div class="mat-card-inner-row">
                         <img class="app-image" alt="" src="../../assets/images/vote-yes.png">
-                        <h2>Total Votes Cast</h2>
-                        <h3>0</h3>
+                        <!-- <h2>Total Votes Cast</h2>
+                        <h3>0</h3> -->
                       </div>
                     </div>
                   </mat-card-content>
@@ -37,8 +37,8 @@
                     <div class="mat-card-inner">
                       <div class="mat-card-inner-row">
                         <img class="app-image" alt="" src="../../assets/images/fingerprint.png">
-                        <h2>Total Registered</h2>
-                        <h3>0</h3>
+                        <!-- <h2>Total Registered</h2>
+                        <h3>0</h3> -->
                       </div>
                     </div>
                   </mat-card-content>
@@ -50,7 +50,10 @@
                   <hr style="width:40%;text-align:center;margin-bottom:15px;">
                   <div class="positions">
                     <mat-chip-list aria-label="Fish selection">
-                      <mat-chip color="primary" selected *ngFor="let title of titles">
+                      <mat-chip color="accent" (click)="onAllChipClicked()" selected>
+                        All Positions
+                      </mat-chip>
+                      <mat-chip color="primary" selected *ngFor="let title of titles" (click)="onChipClicked(title)">
                         {{title?.titleName}}
                       </mat-chip>
                     </mat-chip-list>
@@ -60,17 +63,32 @@
             </div>
             <div class="home-contestants-container">
               <div class="home-contestants-wrapper">
-                <h2 class="select-contestant-title">Select a contestant </h2>
-                <hr style="width:80%;text-align:center;margin-left:20px;margin-right:20px;margin-bottom:25px;">
+                <div class="search-contestant-container">
+                  <mat-form-field class="login-full-width search-contestant-input">
+                    <mat-label>Search contestant</mat-label>
+                    <input matInput placeholder="Search contestant" value="">
+                  </mat-form-field>
+                </div>
                 <div class="home-contestants-inner">
                   <mat-list class="contestants-list" role="list">
-                    <mat-list-item role="listitem" *ngFor="let contestant of contestants" (click)="openDialog(contestant)" >
+                    <mat-list-item role="listitem" *ngFor="let contestant of contestants"
+                      (click)="openDialog(contestant)">
                       <div class="home-contestant-item-container">
                         <div class="home-contestant-item-row">
                           <img class="contestant-image" alt="" src="../../assets/images/woman.png">
                           <div class="contestant-info">
                             <p class="contestant-name">{{contestant?.firstName+" "+contestant?.surname}}</p>
                             <p class="contestant-role">{{contestant?.title?.titleName}}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </mat-list-item>
+                    <mat-list-item *ngIf="noContestants" role="listitem" >
+                      <div class="home-contestant-item-container no-contestants-container">
+                        <div class="home-contestant-item-row">
+                          <div class="contestant-info">
+                            <mat-icon class="no-contestants-icon">warning</mat-icon>
+                            <p class="contestant-name">No Contestants</p>
                           </div>
                         </div>
                       </div>

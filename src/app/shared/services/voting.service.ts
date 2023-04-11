@@ -18,4 +18,20 @@ export class VotingService {
   getAllContestantRoles(): Observable<any>{
     return this.http.get(`${this.baseUrl}/titles`)
   }
+
+  getVoterDetails(id: number): Observable<any>{
+    return this.http.get(`${this.baseUrl}/voters/${id}`)
+  }
+
+  registerVoter(body: any): Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}/voters`,body)
+  }
+
+  getVoter(id: number): Observable<any>{
+    return this.http.get(`${this.baseUrl}/voters/${id}`);
+  }
+
+  vote(body: any): Observable<any>{
+    return this.http.post(`${this.baseUrl}/votes`,body)
+  }
 }

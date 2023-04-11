@@ -36,6 +36,36 @@
   justify-content: center;
 }
 
+.signup-title-line{
+  font-size: 24px;
+  text-align: center;
+  margin: 40px 0px;
+}
+
 .login-form-button{
   margin: 0px 5px;
+}
+
+.signup-title{
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.signup-message{
+  margin: 10px 0px;
+}
+
+.link-container, .image-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0px;
+}
+
+.place-vote-image{
+  width: 180px;
+  border-radius: 24px;
+  height: 210px;
+  margin: 5px 0px;
 }

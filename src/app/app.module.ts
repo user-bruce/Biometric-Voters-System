@@ -1,3 +1,4 @@
+
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,7 +25,7 @@ import { VotingPageComponent } from './home/voting-page/voting-page.component';
 //Define app routes
 let routes: Routes;
 routes = [
-  {path: "", component: LoginComponent},
+  {path: "", component: SignupComponent},
   {path: "login", component: LoginComponent},
   {path: "signup", component: SignupComponent},
   {path: "home", component: HomeComponent},
